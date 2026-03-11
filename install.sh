@@ -20,4 +20,13 @@ link() {
 link "$DOTFILES_DIR/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 link "$DOTFILES_DIR/kitty/tab_bar.py" "$HOME/.config/kitty/tab_bar.py"
 
+# shell
+link "$DOTFILES_DIR/shell/zshrc"    "$HOME/.zshrc"
+link "$DOTFILES_DIR/shell/zshenv"   "$HOME/.zshenv"
+link "$DOTFILES_DIR/shell/zprofile" "$HOME/.zprofile"
+link "$DOTFILES_DIR/shell/bashrc"   "$HOME/.bashrc"
+
+# tmux
+link "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
+
 echo "done"
