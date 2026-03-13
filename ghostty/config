@@ -1,0 +1,58 @@
+# ─── Theme ──────────────────────────────────────────────────────────────
+theme = citruszest
+
+# ─── Font ───────────────────────────────────────────────────────────────
+font-family = FiraCode Nerd Font Mono
+font-size = 13
+
+# ─── Window ─────────────────────────────────────────────────────────────
+window-padding-x = 20
+window-padding-y = 20
+window-padding-balance = true
+window-padding-color = extend
+background-opacity = 0.75
+background-blur-radius = 20
+confirm-close-surface = false
+split-inherit-working-directory = true
+tab-inherit-working-directory = true
+
+# ─── Cursor ─────────────────────────────────────────────────────────────
+cursor-style = bar
+cursor-style-blink = true
+
+# ─── Scrollback ─────────────────────────────────────────────────────────
+scrollback-limit = 10000
+
+# ─── Mouse / URLs ───────────────────────────────────────────────────────
+copy-on-select = clipboard
+link-url = true
+
+# ─── Bell ───────────────────────────────────────────────────────────────
+bell-features = no-system,no-audio,no-attention
+
+# ─── macOS ──────────────────────────────────────────────────────────────
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+quit-after-last-window-closed = false
+
+# ─── Keybindings ────────────────────────────────────────────────────────
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+one=goto_tab:1
+keybind = cmd+two=goto_tab:2
+keybind = cmd+three=goto_tab:3
+keybind = cmd+four=goto_tab:4
+keybind = cmd+five=goto_tab:5
+keybind = cmd+six=goto_tab:6
+keybind = cmd+seven=goto_tab:7
+keybind = cmd+eight=goto_tab:8
+keybind = cmd+nine=goto_tab:9
+keybind = cmd+shift+right_bracket=next_tab
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+right=move_tab:1
+keybind = cmd+shift+left=move_tab:-1
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+
+# ─── Shell Integration ─────────────────────────────────────────────────
+shell-integration = detect
