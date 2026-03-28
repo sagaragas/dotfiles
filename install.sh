@@ -5,7 +5,7 @@ DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 VAULT="${1:-$HOME/notes/Home}"
 
 echo "┌─────────────────────────────────────┐"
-echo "│  Factory Dotfiles Installer         │"
+echo "│  Sagar's Dotfiles                   │"
 echo "│  vault: $VAULT"
 echo "└─────────────────────────────────────┘"
 echo ""
@@ -138,13 +138,19 @@ else
 fi
 
 # ═══════════════════════════════════════════════════════════════════════
-# 10. OBSIDIAN — Vault structure + templates
+# 10. OBSIDIAN — Vault structure + templates (mkdir -p is safe, won't touch existing files)
 # ═══════════════════════════════════════════════════════════════════════
 echo "▸ vault structure"
 mkdir -p "$VAULT/Daily" "$VAULT/Templates" "$VAULT/Projects" \
          "$VAULT/Areas" "$VAULT/Resources" "$VAULT/Archive" "$VAULT/Clippings"
-cp "$DOTFILES_DIR/obsidian/templates/Daily Note.md" "$VAULT/Templates/Daily Note.md"
-echo "  created folders + daily note template"
+# only write template if it doesn't exist
+if [ ! -f "$VAULT/Templates/Daily Note.md" ]; then
+  cp "$DOTFILES_DIR/obsidian/templates/Daily Note.md" "$VAULT/Templates/Daily Note.md"
+  echo "  created daily note template"
+else
+  echo "  daily note template already exists, skipped"
+fi
+echo "  ensured folders exist"
 
 # ═══════════════════════════════════════════════════════════════════════
 # DONE
