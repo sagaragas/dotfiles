@@ -166,8 +166,12 @@ fi
 # ═══════════════════════════════════════════════════════════════════════
 # DONE
 # ═══════════════════════════════════════════════════════════════════════
+RESTART_MSG="restart terminal"
+if [ "$OS" = "Darwin" ] || command -v obsidian &>/dev/null || [ -d "$VAULT/.obsidian" ]; then
+  RESTART_MSG="restart terminal + obsidian"
+fi
 echo ""
 echo "┌─────────────────────────────────────┐"
 echo "│  done                               │"
-echo "│  restart terminal + obsidian        │"
+echo "│  $RESTART_MSG"
 echo "└─────────────────────────────────────┘"
