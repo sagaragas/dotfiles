@@ -1,0 +1,13 @@
+{
+  "cssTheme": "Factory",
+  "translucency": true,
+  "accentColor": "",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "factory-callouts"
+  ],
+  "interfaceFontFamily": "Geist",
+  "textFontFamily": "Geist",
+  "monospaceFontFamily": "Geist Mono",
+  "showRibbon": true
+}
