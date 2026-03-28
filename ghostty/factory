@@ -1,0 +1,28 @@
+# Factory AI — Ghostty Color Theme
+
+background = 020202
+foreground = d6d3d2
+cursor-color = ef6f2e
+cursor-text = 020202
+selection-background = ef6f2e
+selection-foreground = 020202
+
+# Normal
+palette = 0=#1f1d1c
+palette = 1=#f87171
+palette = 2=#34d399
+palette = 3=#ef6f2e
+palette = 4=#60a5fa
+palette = 5=#c084fc
+palette = 6=#22d3ee
+palette = 7=#d6d3d2
+
+# Bright
+palette = 8=#5c5855
+palette = 9=#fca5a5
+palette = 10=#6ee7b7
+palette = 11=#ffb86c
+palette = 12=#93c5fd
+palette = 13=#d8b4fe
+palette = 14=#67e8f9
+palette = 15=#eae7e6

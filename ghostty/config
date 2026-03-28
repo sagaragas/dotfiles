@@ -1,8 +1,8 @@
 # ─── Theme ──────────────────────────────────────────────────────────────
-theme = citruszest
+theme = factory
 
 # ─── Font ───────────────────────────────────────────────────────────────
-font-family = FiraCode Nerd Font Mono
+font-family = Geist Mono
 font-size = 13
 
 # ─── Window ─────────────────────────────────────────────────────────────

@@ -1,0 +1,68 @@
+/* =================================================================
+   Factory Callouts — Custom branded callout types
+   Usage:  > [!droid] Your droid note
+           > [!mission] Mission briefing
+           > [!spec] Specification detail
+           > [!skill] Skill documentation
+           > [!terminal] Command output
+           > [!factory] General Factory note
+   ================================================================= */
+
+/* Droid — purple bot accent */
+.callout[data-callout="droid"] {
+  --callout-color: 139, 92, 246;
+  --callout-icon: bot;
+}
+
+/* Mission — orange target */
+.callout[data-callout="mission"] {
+  --callout-color: 239, 111, 46;
+  --callout-icon: target;
+}
+
+/* Spec — blue document */
+.callout[data-callout="spec"] {
+  --callout-color: 59, 130, 246;
+  --callout-icon: file-text;
+}
+
+/* Skill — yellow lightning */
+.callout[data-callout="skill"] {
+  --callout-color: 234, 179, 8;
+  --callout-icon: zap;
+}
+
+/* Terminal — green command line */
+.callout[data-callout="terminal"] {
+  --callout-color: 52, 211, 153;
+  --callout-icon: terminal;
+}
+
+.callout[data-callout="terminal"] .callout-content {
+  font-family: var(--font-monospace);
+  font-size: 0.88em;
+}
+
+/* Factory — burnt orange brand */
+.callout[data-callout="factory"] {
+  --callout-color: 239, 111, 46;
+  --callout-icon: factory;
+}
+
+/* Session — green chat */
+.callout[data-callout="session"] {
+  --callout-color: 16, 185, 129;
+  --callout-icon: message-circle;
+}
+
+/* Plugin — pink plug */
+.callout[data-callout="plugin"] {
+  --callout-color: 236, 72, 153;
+  --callout-icon: plug;
+}
+
+/* MCP — cyan server */
+.callout[data-callout="mcp"] {
+  --callout-color: 6, 182, 212;
+  --callout-icon: server;
+}

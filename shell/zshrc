@@ -1,5 +1,34 @@
-# ─── Prompt (Catppuccin Mocha) ──────────────────────────────────────────
-PS1=$'%{\033[38;2;166;227;161m%}%n%{\033[0m%}:%{\033[38;2;249;226;175m%}%~%{\033[0m%}%{\033[38;2;205;214;244m%}\$%{\033[0m%} '
+# ─── Prompt (Factory) ───────────────────────────────────────────────────
+PS1=$'%{\033[38;2;239;111;46m%}%n%{\033[0m%}:%{\033[38;2;204;201;199m%}%~%{\033[0m%}%{\033[38;2;138;131;128m%}\$%{\033[0m%} '
+
+# ─── ls colors (Factory) ───────────────────────────────────────────────
+export CLICOLOR=1
+export LSCOLORS="Dxgxfxdxcxegedabagacad"
+export LS_COLORS="di=1;38;2;239;111;46:ln=38;2;34;211;233:so=38;2;192;132;252:pi=38;2;251;191;36:ex=38;2;52;211;153:bd=38;2;96;165;250:cd=38;2;96;165;250:su=38;2;248;113;113:sg=38;2;248;113;113:tw=38;2;239;111;46;48;2;31;29;28:ow=38;2;239;111;46:*.md=38;2;204;201;199:*.json=38;2;251;191;36:*.toml=38;2;251;191;36:*.yaml=38;2;251;191;36:*.yml=38;2;251;191;36:*.ts=38;2;96;165;250:*.tsx=38;2;96;165;250:*.js=38;2;251;191;36:*.py=38;2;52;211;153:*.rs=38;2;248;113;113:*.go=38;2;34;211;233:*.sh=38;2;52;211;153:*.css=38;2;192;132;252:*.html=38;2;239;111;46:*.svg=38;2;239;111;46:*.png=38;2;192;132;252:*.jpg=38;2;192;132;252:*.gif=38;2;192;132;252:*.zip=38;2;248;113;113:*.tar=38;2;248;113;113:*.gz=38;2;248;113;113:*.log=38;2;92;88;85:*.bak=38;2;92;88;85:*.tmp=38;2;92;88;85"
+
+# ─── grep colors (Factory) ─────────────────────────────────────────────
+export GREP_COLOR="38;2;239;111;46"
+export GREP_COLORS="mt=38;2;239;111;46:fn=38;2;204;201;199:ln=38;2;138;131;128:se=38;2;61;58;57"
+alias grep="grep --color=auto"
+
+# ─── man pages colors (Factory) ────────────────────────────────────────
+export LESS_TERMCAP_mb=$'\033[38;2;248;113;113m'
+export LESS_TERMCAP_md=$'\033[38;2;239;111;46m'
+export LESS_TERMCAP_me=$'\033[0m'
+export LESS_TERMCAP_so=$'\033[38;2;2;2;2;48;2;239;111;46m'
+export LESS_TERMCAP_se=$'\033[0m'
+export LESS_TERMCAP_us=$'\033[38;2;52;211;153m'
+export LESS_TERMCAP_ue=$'\033[0m'
+export LESS="-R"
+
+# ─── diff colors ───────────────────────────────────────────────────────
+alias diff="diff --color=auto"
+
+# ─── zsh completion colors ─────────────────────────────────────────────
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*:descriptions' format $'\033[38;2;239;111;46m-- %d --\033[0m'
+zstyle ':completion:*:messages' format $'\033[38;2;138;131;128m-- %d --\033[0m'
+zstyle ':completion:*:warnings' format $'\033[38;2;248;113;113m-- no matches --\033[0m'
 
 # ─── Aliases ────────────────────────────────────────────────────────────
 alias cf="***REMOVED*** tunnel run"
@@ -8,7 +37,7 @@ alias prox2="ssh root@***REMOVED***"
 alias prox3="ssh root@***REMOVED***"
 alias prox4="ssh root@***REMOVED***"
 
-alias ll="ls -lAh"
+alias ll="ls -lAhG"
 alias ..="cd .."
 alias ...="cd ../.."
 
