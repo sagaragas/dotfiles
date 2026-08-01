@@ -22,7 +22,7 @@ alias grep="grep --color=auto"
 export LESS_TERMCAP_mb=$'\033[38;2;209;77;65m'
 export LESS_TERMCAP_md=$'\033[38;2;175;48;41m'
 export LESS_TERMCAP_me=$'\033[0m'
-export LESS_TERMCAP_so=$'\033[38;2;255;252;240;48;2;166;0;0m'
+export LESS_TERMCAP_so=$'\033[38;2;255;252;240;48;2;175;48;41m'
 export LESS_TERMCAP_se=$'\033[0m'
 export LESS_TERMCAP_us=$'\033[38;2;102;128;11m'
 export LESS_TERMCAP_ue=$'\033[0m'
