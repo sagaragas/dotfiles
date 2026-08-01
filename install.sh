@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
-VAULT="${1:-$HOME/notes/Home}"
+VAULT="${1:-$HOME/notes/Work}"
 OS="$(uname -s)"
 
 # ── Colors ──────────────────────────────────────────────────────────────
@@ -85,6 +85,15 @@ if [ "$OS" = "Darwin" ] || has kitty; then
   put "$DOTFILES/kitty/factory-tab_bar.py" "$HOME/.config/kitty/tab_bar.py"
   put "$DOTFILES/kitty/factory-theme.conf" "$HOME/.config/kitty/factory-theme.conf"
   ok "config + factory theme + tab bar"
+else
+  skip "not installed"
+fi
+
+# ── WezTerm ─────────────────────────────────────────────────────────────
+header "WezTerm"
+if [ "$OS" = "Darwin" ] || has wezterm; then
+  put "$DOTFILES/wezterm/wezterm.lua" "$HOME/.wezterm.lua"
+  ok "~/.wezterm.lua"
 else
   skip "not installed"
 fi

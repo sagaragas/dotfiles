@@ -1,28 +1,28 @@
-# Factory AI — Ghostty Color Theme
+# Modus Operandi Tinted — Ghostty Color Theme
 
-background = 020202
-foreground = d6d3d2
-cursor-color = ef6f2e
-cursor-text = 020202
-selection-background = ef6f2e
-selection-foreground = 020202
+background = #fbf7f0
+foreground = #000000
+cursor-color = #d00000
+cursor-text = #fbf7f0
+selection-background = #c2bcb5
+selection-foreground = #000000
 
 # Normal
-palette = 0=#1f1d1c
-palette = 1=#f87171
-palette = 2=#34d399
-palette = 3=#ef6f2e
-palette = 4=#60a5fa
-palette = 5=#c084fc
-palette = 6=#22d3ee
-palette = 7=#d6d3d2
+palette = 0=#000000
+palette = 1=#a60000
+palette = 2=#006800
+palette = 3=#6f5500
+palette = 4=#0031a9
+palette = 5=#721045
+palette = 6=#005e8b
+palette = 7=#a6a6a6
 
 # Bright
-palette = 8=#5c5855
-palette = 9=#fca5a5
-palette = 10=#6ee7b7
-palette = 11=#ffb86c
-palette = 12=#93c5fd
-palette = 13=#d8b4fe
-palette = 14=#67e8f9
-palette = 15=#eae7e6
+palette = 8=#595959
+palette = 9=#972500
+palette = 10=#00663f
+palette = 11=#884900
+palette = 12=#3548cf
+palette = 13=#531ab6
+palette = 14=#005f5f
+palette = 15=#595959

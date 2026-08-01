@@ -2,17 +2,17 @@ from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer
 from kitty.tab_bar import DrawData, ExtraData, TabBarData, as_rgb, draw_title
 
-# Factory AI color palette — warm neutrals + brand orange
+# Modus Operandi Tinted palette
 PALETTE = [
-    {"bg": "#ef6f2e", "fg": "#020202"},  # orange (primary)
-    {"bg": "#34d399", "fg": "#020202"},  # green
-    {"bg": "#60a5fa", "fg": "#020202"},  # blue
-    {"bg": "#c084fc", "fg": "#020202"},  # purple
-    {"bg": "#f87171", "fg": "#020202"},  # red
-    {"bg": "#22d3ee", "fg": "#020202"},  # cyan
-    {"bg": "#fbbf24", "fg": "#020202"},  # yellow
-    {"bg": "#f472b6", "fg": "#020202"},  # pink
-    {"bg": "#a78bfa", "fg": "#020202"},  # violet
+    {"bg": "#d00000", "fg": "#fbf7f0"},  # red
+    {"bg": "#006800", "fg": "#fbf7f0"},  # green
+    {"bg": "#0031a9", "fg": "#fbf7f0"},  # blue
+    {"bg": "#721045", "fg": "#fbf7f0"},  # magenta
+    {"bg": "#a60000", "fg": "#fbf7f0"},  # dark red
+    {"bg": "#005e8b", "fg": "#fbf7f0"},  # cyan
+    {"bg": "#6f5500", "fg": "#fbf7f0"},  # yellow
+    {"bg": "#972500", "fg": "#fbf7f0"},  # bright red
+    {"bg": "#531ab6", "fg": "#fbf7f0"},  # bright magenta
 ]
 
 DIM_FACTOR = 0.4
@@ -47,7 +47,7 @@ def draw_tab(
     else:
         dr, dg, db = _dim_rgb(bg_r, bg_g, bg_b, DIM_FACTOR)
         bg = as_rgb(_rgb_int(dr, dg, db))
-        fg = as_rgb(_rgb_int(200, 200, 200))
+        fg = as_rgb(_rgb_int(251, 247, 240))
 
     draw_data = draw_data._replace(
         active_bg=bg, active_fg=fg,

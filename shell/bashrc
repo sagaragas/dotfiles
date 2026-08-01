@@ -1,23 +1,23 @@
-# ─── Prompt (Factory) ───────────────────────────────────────────────────
-# user=accent orange, host=neutral-300, path=neutral-200, $=neutral-400
-PS1='\[\033[38;2;239;111;46m\]\u\[\033[0m\]@\[\033[38;2;184;179;176m\]\h\[\033[0m\]:\[\033[38;2;204;201;199m\]\w\[\033[0m\]\[\033[38;2;138;131;128m\]\$ \[\033[0m\]'
+# ─── Prompt (Modus Operandi Tinted) ─────────────────────────────────────
+# user=red, host=black, path=black, $=gray
+PS1='\[\033[38;2;166;0;0m\]\u\[\033[0m\]@\[\033[38;2;0;0;0m\]\h\[\033[0m\]:\[\033[38;2;0;0;0m\]\w\[\033[0m\]\[\033[38;2;89;89;89m\]\$ \[\033[0m\]'
 
-# ─── ls colors (Factory) ───────────────────────────────────────────────
-export LS_COLORS="di=1;38;2;239;111;46:ln=38;2;34;211;233:so=38;2;192;132;252:pi=38;2;251;191;36:ex=38;2;52;211;153:bd=38;2;96;165;250:cd=38;2;96;165;250:su=38;2;248;113;113:sg=38;2;248;113;113:tw=38;2;239;111;46;48;2;31;29;28:ow=38;2;239;111;46:*.md=38;2;204;201;199:*.json=38;2;251;191;36:*.toml=38;2;251;191;36:*.yaml=38;2;251;191;36:*.yml=38;2;251;191;36:*.ts=38;2;96;165;250:*.tsx=38;2;96;165;250:*.js=38;2;251;191;36:*.py=38;2;52;211;153:*.rs=38;2;248;113;113:*.go=38;2;34;211;233:*.sh=38;2;52;211;153:*.css=38;2;192;132;252:*.html=38;2;239;111;46:*.svg=38;2;239;111;46:*.png=38;2;192;132;252:*.jpg=38;2;192;132;252:*.gif=38;2;192;132;252:*.zip=38;2;248;113;113:*.tar=38;2;248;113;113:*.gz=38;2;248;113;113:*.log=38;2;92;88;85:*.bak=38;2;92;88;85:*.tmp=38;2;92;88;85"
+# ─── ls colors (Modus Operandi Tinted) ──────────────────────────────────
+export LS_COLORS="di=1;38;2;166;0;0:ln=38;2;0;94;139:so=38;2;114;16;69:pi=38;2;111;85;0:ex=38;2;0;104;0:bd=38;2;0;49;169:cd=38;2;0;49;169:su=38;2;151;37;0:sg=38;2;151;37;0:tw=38;2;166;0;0;48;2;194;188;181:ow=38;2;166;0;0:*.md=38;2;89;89;89:*.json=38;2;111;85;0:*.toml=38;2;111;85;0:*.yaml=38;2;111;85;0:*.yml=38;2;111;85;0:*.ts=38;2;0;49;169:*.tsx=38;2;0;49;169:*.js=38;2;111;85;0:*.py=38;2;0;104;0:*.rs=38;2;166;0;0:*.go=38;2;0;94;139:*.sh=38;2;0;104;0:*.css=38;2;114;16;69:*.html=38;2;166;0;0:*.svg=38;2;166;0;0:*.png=38;2;114;16;69:*.jpg=38;2;114;16;69:*.gif=38;2;114;16;69:*.zip=38;2;166;0;0:*.tar=38;2;166;0;0:*.gz=38;2;166;0;0:*.log=38;2;89;89;89:*.bak=38;2;89;89;89:*.tmp=38;2;89;89;89"
 alias ls="ls --color=auto"
 
-# ─── grep colors (Factory) ─────────────────────────────────────────────
-export GREP_COLOR="38;2;239;111;46"
-export GREP_COLORS="mt=38;2;239;111;46:fn=38;2;204;201;199:ln=38;2;138;131;128:se=38;2;61;58;57"
+# ─── grep colors (Modus Operandi Tinted) ────────────────────────────────
+export GREP_COLOR="38;2;166;0;0"
+export GREP_COLORS="mt=38;2;166;0;0:fn=38;2;89;89;89:ln=38;2;89;89;89:se=38;2;166;166;166"
 alias grep="grep --color=auto"
 
-# ─── man pages colors (Factory) ────────────────────────────────────────
-export LESS_TERMCAP_mb=$'\033[38;2;248;113;113m'
-export LESS_TERMCAP_md=$'\033[38;2;239;111;46m'
+# ─── man pages colors (Modus Operandi Tinted) ───────────────────────────
+export LESS_TERMCAP_mb=$'\033[38;2;151;37;0m'
+export LESS_TERMCAP_md=$'\033[38;2;166;0;0m'
 export LESS_TERMCAP_me=$'\033[0m'
-export LESS_TERMCAP_so=$'\033[38;2;2;2;2;48;2;239;111;46m'
+export LESS_TERMCAP_so=$'\033[38;2;251;247;240;48;2;166;0;0m'
 export LESS_TERMCAP_se=$'\033[0m'
-export LESS_TERMCAP_us=$'\033[38;2;52;211;153m'
+export LESS_TERMCAP_us=$'\033[38;2;0;104;0m'
 export LESS_TERMCAP_ue=$'\033[0m'
 export LESS="-R"
 
@@ -25,15 +25,8 @@ export LESS="-R"
 alias diff="diff --color=auto"
 
 # ─── Aliases ────────────────────────────────────────────────────────────
-alias cf="***REMOVED*** tunnel run"
-alias prox1="ssh root@***REMOVED***"
-alias prox2="ssh root@***REMOVED***"
-alias prox3="ssh root@***REMOVED***"
-alias prox4="ssh root@***REMOVED***"
-alias home="ssh root@***REMOVED***"
-alias ll="ls -lAh --color=auto"
-alias ..="cd .."
-alias ...="cd ../.."
+# Personal aliases live in ~/.aliases.local (private, not tracked in this repo).
+[ -f "$HOME/.aliases.local" ] && source "$HOME/.aliases.local"
 
 # ─── History ────────────────────────────────────────────────────────────
 HISTSIZE=10000

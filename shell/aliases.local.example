@@ -1,0 +1,7 @@
+# ~/.aliases.local — personal aliases live here, never in this repo.
+# zshrc and bashrc source this file if it exists.
+# Set up per machine with: cp shell/aliases.local.example ~/.aliases.local
+
+alias ll="ls -lAh"
+alias ..="cd .."
+alias ...="cd ../.."

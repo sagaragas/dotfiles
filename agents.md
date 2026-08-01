@@ -13,6 +13,7 @@ This is a dotfiles repo. Configs are stored here and copied to their destination
 - **No symlinks**: `install.sh` uses `cp -f`, not `ln -s`.
 - **OS-aware**: The installer detects `Darwin` vs `Linux`. GUI app configs (ghostty, kitty, obsidian) are skipped on headless Linux. Zsh configs are skipped if zsh isn't installed.
 - **Shell parity**: `zshrc` and `bashrc` should have the same color environment (ls, grep, man, diff). The zsh version has zsh-specific features (completion styles, `%~` prompt). The bash version uses GNU equivalents (`ls --color=auto`, `\w` prompt, `shopt`).
+- **No personal aliases**: Aliases that reference private hosts, IPs, or paths never go in the repo. `zshrc`/`bashrc` source `~/.aliases.local` if it exists; `shell/aliases.local.example` is the template. Keep repo files free of usernames, home paths, and internal hostnames too.
 
 ## File layout
 
@@ -26,6 +27,7 @@ shell/zshrc            → ~/.zshrc
 shell/zshenv           → ~/.zshenv
 shell/zprofile         → ~/.zprofile
 shell/bashrc           → ~/.bashrc
+shell/aliases.local.example → template for ~/.aliases.local (copied manually, never committed)
 tmux/tmux.conf         → ~/.tmux.conf
 obsidian/*             → ~/notes/Home/.obsidian/
 ```
