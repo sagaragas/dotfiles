@@ -1,0 +1,29 @@
+kitty/kitty.conf
+  b3f25e0d736a0871 2
+install.sh
+  b3f25e0d736a0871 75-76,85-87
+wezterm/wezterm.lua
+  b3f25e0d736a0871 46-53,55-62,65-72,75,77-78,82-83,86-87,90-91,94-95
+ghostty/config
+  b3f25e0d736a0871 2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.2.2",
+  "base_commit_sha": "3a86b474138c928f6d4ecad8f8f9f2b106d2d05e",
+  "prompts": {
+    "b3f25e0d736a0871": {
+      "agent_id": {
+        "tool": "droid",
+        "id": "c3328de0-2335-4fd3-a015-80ac1a1854f9",
+        "model": "kimi-k3"
+      },
+      "human_author": "Sagar Narayan",
+      "messages": [],
+      "total_additions": 102,
+      "total_deletions": 102,
+      "accepted_lines": 42,
+      "overriden_lines": 0
+    }
+  }
+}
