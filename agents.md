@@ -19,10 +19,10 @@ This is a dotfiles repo. Configs are stored here and copied to their destination
 
 ```
 ghostty/config         → ~/.config/ghostty/config
-ghostty/factory        → ~/.config/ghostty/themes/factory
+ghostty/flexoki-light  → ~/.config/ghostty/themes/flexoki-light
 kitty/kitty.conf       → ~/.config/kitty/kitty.conf
-kitty/factory-theme.conf → ~/.config/kitty/factory-theme.conf
-kitty/factory-tab_bar.py → ~/.config/kitty/tab_bar.py
+kitty/flexoki-light.conf → ~/.config/kitty/flexoki-light.conf
+kitty/tab_bar.py       → ~/.config/kitty/tab_bar.py
 shell/zshrc            → ~/.zshrc
 shell/zshenv           → ~/.zshenv
 shell/zprofile         → ~/.zprofile
