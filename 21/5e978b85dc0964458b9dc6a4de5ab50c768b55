@@ -1,0 +1,28 @@
+README.md
+  h_e672b8301b2c46 39
+agents.md
+  h_e672b8301b2c46 11
+kitty/kitty.conf
+  h_e672b8301b2c46 19,74
+kitty/moonfly.conf
+  h_e672b8301b2c46 2,15,20
+kitty/tab_bar.py
+  h_e672b8301b2c46 7,9
+shell/bashrc
+  h_e672b8301b2c46 3,6,10-11,16,18
+shell/zshrc
+  h_e672b8301b2c46 2,8-11,13,16,20-21,26,28,41
+tmux/tmux.conf
+  h_e672b8301b2c46 26,33,36,40,46-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "215e978b85dc0964458b9dc6a4de5ab50c768b55",
+  "prompts": {},
+  "humans": {
+    "h_e672b8301b2c46": {
+      "author": "Sagar Narayan <sagar@factory.ai>"
+    }
+  }
+}
