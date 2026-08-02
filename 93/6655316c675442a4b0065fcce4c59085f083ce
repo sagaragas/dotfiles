@@ -1,0 +1,16 @@
+README.md
+  h_e672b8301b2c46 25
+agents.md
+  h_e672b8301b2c46 32
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "936655316c675442a4b0065fcce4c59085f083ce",
+  "prompts": {},
+  "humans": {
+    "h_e672b8301b2c46": {
+      "author": "Sagar Narayan <sagar@factory.ai>"
+    }
+  }
+}
