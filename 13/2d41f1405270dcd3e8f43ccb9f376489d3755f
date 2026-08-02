@@ -1,0 +1,14 @@
+kitty/kitty.conf
+  h_e672b8301b2c46 9,16-18,26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "132d41f1405270dcd3e8f43ccb9f376489d3755f",
+  "prompts": {},
+  "humans": {
+    "h_e672b8301b2c46": {
+      "author": "Sagar Narayan <sagar@factory.ai>"
+    }
+  }
+}
