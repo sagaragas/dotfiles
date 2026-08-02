@@ -1,0 +1,34 @@
+README.md
+  h_e672b8301b2c46 9-12,35,39-60,69,72-73
+agents.md
+  h_e672b8301b2c46 11,22,24,37
+ghostty/config
+  h_e672b8301b2c46 2
+ghostty/moonfly
+  h_e672b8301b2c46 1,3-8,11-18,21-28
+install.sh
+  h_e672b8301b2c46 75-76,84-87
+kitty/kitty.conf
+  h_e672b8301b2c46 2,19-20,73-74
+kitty/moonfly.conf
+  h_e672b8301b2c46 1-2,5-11,14-17,20-21,24-29,33,35,37,39,41,43,45,47,51,53,55,57,59,61,63,65
+kitty/tab_bar.py
+  h_e672b8301b2c46 5,7-15,19,51
+shell/bashrc
+  h_e672b8301b2c46 1-3,5-6,9-11,14-16,18,20
+shell/zshrc
+  h_e672b8301b2c46 1-2,4,8-9,11,14,16,18-19,22-24,26,28,31,39-41
+tmux/tmux.conf
+  h_e672b8301b2c46 24-26,28,31,33,36,40,43,46-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.20",
+  "base_commit_sha": "e0bfcad85a17f1662c8a0a44ba9b52ffddacbb2c",
+  "prompts": {},
+  "humans": {
+    "h_e672b8301b2c46": {
+      "author": "Sagar Narayan <sagar@factory.ai>"
+    }
+  }
+}
