@@ -8,7 +8,7 @@ This is a dotfiles repo. Configs are stored here and copied to their destination
 
 ## Conventions
 
-- **Color palette**: Terminal configs (ghostty, kitty, tmux, zshrc, bashrc) use Moonfly. Accent is `#ae81ff` (violet), background `#080808`, surface `#323437`, text `#bdbdbd`, muted `#949494`. The obsidian theme is separate and still uses the Factory AI palette (`#ef6f2e` on `#020202`). See the palette tables in README.md.
+- **Color palette**: Terminal configs (ghostty, kitty, tmux, zshrc, bashrc) use Moonfly. Accent is `#74b2ff` (blue), background `#080808`, surface `#323437`, text `#bdbdbd`, muted `#949494`. The obsidian theme is separate and still uses the Factory AI palette (`#ef6f2e` on `#020202`). See the palette tables in README.md.
 - **Fonts**: Geist (sans) and Geist Mono. Never reference Nerd Font variants -- they're not installed.
 - **No symlinks**: `install.sh` uses `cp -f`, not `ln -s`.
 - **OS-aware**: The installer detects `Darwin` vs `Linux`. GUI app configs (ghostty, kitty, obsidian) are skipped on headless Linux. Zsh configs are skipped if zsh isn't installed.

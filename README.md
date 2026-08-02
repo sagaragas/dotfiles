@@ -36,7 +36,7 @@ Terminal configs (ghostty, kitty, tmux, zsh, bash) share the Moonfly palette:
 
 | Role | Hex |
 |------|-----|
-| Accent (violet) | `#ae81ff` |
+| Accent (blue) | `#74b2ff` |
 | Background | `#080808` |
 | Surface / border | `#323437` |
 | Text | `#bdbdbd` |

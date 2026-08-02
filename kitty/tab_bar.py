@@ -4,9 +4,9 @@ from kitty.tab_bar import DrawData, ExtraData, TabBarData, as_rgb, draw_title
 
 # Moonfly palette
 PALETTE = [
-    {"bg": "#ae81ff", "fg": "#080808"},  # violet
+    {"bg": "#74b2ff", "fg": "#080808"},  # blue
     {"bg": "#8cc85f", "fg": "#080808"},  # green
-    {"bg": "#80a0ff", "fg": "#080808"},  # blue
+    {"bg": "#ae81ff", "fg": "#080808"},  # violet
     {"bg": "#cf87e8", "fg": "#080808"},  # magenta
     {"bg": "#ff5454", "fg": "#080808"},  # red
     {"bg": "#79dac8", "fg": "#080808"},  # cyan
