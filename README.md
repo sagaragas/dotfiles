@@ -22,7 +22,7 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-Optional: pass a custom vault path (default is `~/notes/Home`):
+Optional: pass a custom vault path (default is `~/notes/Work`):
 
 ```bash
 ./install.sh ~/my-vault

@@ -29,7 +29,7 @@ shell/zprofile         → ~/.zprofile
 shell/bashrc           → ~/.bashrc
 shell/aliases.local.example → template for ~/.aliases.local (copied manually, never committed)
 tmux/tmux.conf         → ~/.tmux.conf
-obsidian/*             → ~/notes/Home/.obsidian/
+obsidian/*             → ~/notes/Work/.obsidian/  (override with ./install.sh <vault>)
 ```
 
 ## Rules
