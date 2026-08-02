@@ -2,20 +2,21 @@ from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer
 from kitty.tab_bar import DrawData, ExtraData, TabBarData, as_rgb, draw_title
 
-# Flexoki Light palette
+# Moonfly palette
 PALETTE = [
-    {"bg": "#af3029", "fg": "#fffcf0"},  # red
-    {"bg": "#66800b", "fg": "#fffcf0"},  # green
-    {"bg": "#205ea6", "fg": "#fffcf0"},  # blue
-    {"bg": "#a02f6f", "fg": "#fffcf0"},  # magenta
-    {"bg": "#ad4a1f", "fg": "#fffcf0"},  # orange
-    {"bg": "#24837b", "fg": "#fffcf0"},  # cyan
-    {"bg": "#ad8301", "fg": "#fffcf0"},  # yellow
-    {"bg": "#d14d41", "fg": "#fffcf0"},  # bright red
-    {"bg": "#ce5d97", "fg": "#fffcf0"},  # bright magenta
+    {"bg": "#ae81ff", "fg": "#080808"},  # violet
+    {"bg": "#8cc85f", "fg": "#080808"},  # green
+    {"bg": "#80a0ff", "fg": "#080808"},  # blue
+    {"bg": "#cf87e8", "fg": "#080808"},  # magenta
+    {"bg": "#ff5454", "fg": "#080808"},  # red
+    {"bg": "#79dac8", "fg": "#080808"},  # cyan
+    {"bg": "#e3c78a", "fg": "#080808"},  # yellow
+    {"bg": "#ff5189", "fg": "#080808"},  # crimson
+    {"bg": "#36c692", "fg": "#080808"},  # turquoise
 ]
 
 DIM_FACTOR = 0.4
+INACTIVE_FG = (189, 189, 189)
 
 def _hex_to_rgb(h):
     h = h.lstrip("#")
@@ -47,7 +48,7 @@ def draw_tab(
     else:
         dr, dg, db = _dim_rgb(bg_r, bg_g, bg_b, DIM_FACTOR)
         bg = as_rgb(_rgb_int(dr, dg, db))
-        fg = as_rgb(_rgb_int(255, 252, 240))
+        fg = as_rgb(_rgb_int(*INACTIVE_FG))
 
     draw_data = draw_data._replace(
         active_bg=bg, active_fg=fg,

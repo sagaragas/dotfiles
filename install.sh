@@ -72,8 +72,8 @@ header "Ghostty"
 if [ "$OS" = "Darwin" ] || has ghostty; then
   put "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
   mkdir -p "$HOME/.config/ghostty/themes"
-  cp -f "$DOTFILES/ghostty/flexoki-light" "$HOME/.config/ghostty/themes/flexoki-light"
-  ok "config + flexoki-light theme"
+  cp -f "$DOTFILES/ghostty/moonfly" "$HOME/.config/ghostty/themes/moonfly"
+  ok "config + moonfly theme"
 else
   skip "not installed"
 fi
@@ -81,10 +81,10 @@ fi
 # ── Kitty ───────────────────────────────────────────────────────────────
 header "Kitty"
 if [ "$OS" = "Darwin" ] || has kitty; then
-  put "$DOTFILES/kitty/kitty.conf"         "$HOME/.config/kitty/kitty.conf"
-  put "$DOTFILES/kitty/tab_bar.py"         "$HOME/.config/kitty/tab_bar.py"
-  put "$DOTFILES/kitty/flexoki-light.conf" "$HOME/.config/kitty/flexoki-light.conf"
-  ok "config + flexoki-light theme + tab bar"
+  put "$DOTFILES/kitty/kitty.conf"   "$HOME/.config/kitty/kitty.conf"
+  put "$DOTFILES/kitty/tab_bar.py"   "$HOME/.config/kitty/tab_bar.py"
+  put "$DOTFILES/kitty/moonfly.conf" "$HOME/.config/kitty/moonfly.conf"
+  ok "config + moonfly theme + tab bar"
 else
   skip "not installed"
 fi
