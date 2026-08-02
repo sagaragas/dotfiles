@@ -89,15 +89,6 @@ else
   skip "not installed"
 fi
 
-# ── WezTerm ─────────────────────────────────────────────────────────────
-header "WezTerm"
-if [ "$OS" = "Darwin" ] || has wezterm; then
-  put "$DOTFILES/wezterm/wezterm.lua" "$HOME/.wezterm.lua"
-  ok "~/.wezterm.lua"
-else
-  skip "not installed"
-fi
-
 # ── Shell ───────────────────────────────────────────────────────────────
 header "Shell"
 if has zsh; then
