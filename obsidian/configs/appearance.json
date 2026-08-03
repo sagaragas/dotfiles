@@ -6,8 +6,8 @@
   "enabledCssSnippets": [
     "factory-callouts"
   ],
-  "interfaceFontFamily": "Geist",
-  "textFontFamily": "Geist",
-  "monospaceFontFamily": "Geist Mono",
+  "interfaceFontFamily": "",
+  "textFontFamily": "",
+  "monospaceFontFamily": "JetBrains Mono",
   "showRibbon": true
 }

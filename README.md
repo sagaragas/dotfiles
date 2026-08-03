@@ -7,12 +7,12 @@ Factory AI-themed configs for macOS and Linux.
 | Component | Config | Notes |
 |-----------|--------|-------|
 | **Ghostty** | `ghostty/` | Moonfly color theme |
-| **Kitty** | `kitty/` | Moonfly theme + custom Python tab bar |
+| **Kitty** | `kitty/` | Factory theme + custom Python tab bar |
 | **Tmux** | `tmux/` | Moonfly status bar and pane borders |
 | **Zsh** | `shell/zshrc` | Moonfly prompt, ls/grep/man/diff colors |
 | **Bash** | `shell/bashrc` | Same as zsh, for headless Linux boxes |
 | **Obsidian** | `obsidian/` | Factory theme (dark+light), callouts, plugins |
-| **Fonts** | auto-downloaded | Geist + Geist Mono (Vercel) |
+| **Fonts** | auto-downloaded | JetBrains Mono |
 
 ## Install
 

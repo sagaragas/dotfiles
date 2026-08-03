@@ -2,7 +2,7 @@
 theme = moonfly
 
 # ─── Font ───────────────────────────────────────────────────────────────
-font-family = Geist Mono
+font-family = JetBrains Mono
 font-size = 13
 
 # ─── Window ─────────────────────────────────────────────────────────────

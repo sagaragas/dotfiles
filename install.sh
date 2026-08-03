@@ -90,10 +90,6 @@ install_font() {
   rm -rf "$tmpd"
 }
 
-install_font "Geist + Geist Mono" "GeistMono-Regular.otf" \
-  "https://github.com/vercel/geist-font/releases/download/1.8.0/geist-font-1.8.0.zip" \
-  "geist-font-*/fonts/*/otf/*.otf"
-
 install_font "JetBrains Mono" "JetBrainsMono-Regular.ttf" \
   "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip" \
   "fonts/ttf/*.ttf"

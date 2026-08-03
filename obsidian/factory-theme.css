@@ -5,7 +5,7 @@
    Design system derived from factory.ai brand:
    - Dark-first, warm neutrals
    - Burnt orange accent (#ef6f2e)
-   - Geist / SF Pro / system sans-serif typography
+   - SF Pro / system sans-serif typography
    - Terminal-grade information density
    =================================================================== */
 
@@ -50,8 +50,8 @@
   --factory-info: #60a5fa;
 
   /* Typography */
-  --factory-font-sans: 'Geist', 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
-  --factory-font-mono: 'Geist Mono', 'FiraCode Nerd Font Mono', 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+  --factory-font-sans: 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --factory-font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
 
   /* Radius — tight, engineered feel */
   --factory-radius-xs: 2px;
