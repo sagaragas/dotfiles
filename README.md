@@ -28,6 +28,22 @@ Optional: pass a custom vault path (default is `~/notes/Work`):
 ./install.sh ~/my-vault
 ```
 
+Every run starts with a check report (in sync / would overwrite / new)
+and asks before changing anything. Flags: `--check` prints the report
+and exits without touching anything, `-y` skips the prompt.
+
+## Updating an existing machine
+
+```bash
+cd ~/dotfiles
+git pull
+./install.sh
+```
+
+Everything is idempotent: files already in sync are skipped, fonts and
+plugins are only fetched when missing, and personal aliases in
+`~/.aliases.local` are never touched.
+
 The script detects the OS and skips GUI apps (ghostty, kitty, obsidian) on headless Linux. Fonts go to `~/Library/Fonts` on macOS and `~/.local/share/fonts` on Linux.
 
 ## Color palette

@@ -2,8 +2,18 @@
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
-VAULT="${1:-$HOME/notes/Work}"
 OS="$(uname -s)"
+
+CHECK=0
+YES=0
+VAULT="$HOME/notes/Work"
+for a in "$@"; do
+  case "$a" in
+    --check|check|-n|--dry-run) CHECK=1 ;;
+    -y|--yes)                   YES=1 ;;
+    *)                          VAULT="$a" ;;
+  esac
+done
 
 # ── Colors ──────────────────────────────────────────────────────────────
 R='\033[0m'
@@ -52,8 +62,6 @@ download_plugin() {
   curl -sL "https://github.com/$repo/releases/latest/download/styles.css"    -o "$dir/styles.css" 2>/dev/null || true
 }
 
-# ── Fonts ───────────────────────────────────────────────────────────────
-header "Fonts"
 [ "$OS" = "Darwin" ] && FONT_DIR="$HOME/Library/Fonts" || FONT_DIR="$HOME/.local/share/fonts"
 
 font_installed() {
@@ -93,6 +101,104 @@ install_font() {
   rm -rf "$tmpd"
 }
 
+pretty() { printf "%s" "${1/#$HOME/~}"; }
+
+# st <repo-file> <dest>: report sync state for a file put() would copy
+st() {
+  local src="$1" dst="$2"
+  if [ "$(readlink "$dst" 2>/dev/null)" = "$src" ]; then
+    ok "$(pretty "$dst") (symlinked)"
+  elif [ ! -e "$dst" ]; then
+    info "$(pretty "$dst") (new)"
+  elif cmp -s "$src" "$dst"; then
+    ok "$(pretty "$dst") (in sync)"
+  else
+    info "$(pretty "$dst") (would overwrite)"
+  fi
+}
+
+run_check() {
+  header "Check"
+
+  if font_installed "JetBrainsMono-Regular.ttf"; then
+    ok "JetBrains Mono"
+  else
+    info "JetBrains Mono (would install)"
+  fi
+
+  if [ "$OS" = "Darwin" ] || has ghostty; then
+    st "$DOTFILES/ghostty/config"  "$HOME/.config/ghostty/config"
+    st "$DOTFILES/ghostty/moonfly" "$HOME/.config/ghostty/themes/moonfly"
+  else
+    skip "ghostty (not installed)"
+  fi
+
+  if [ "$OS" = "Darwin" ] || has kitty; then
+    st "$DOTFILES/kitty/kitty.conf"          "$HOME/.config/kitty/kitty.conf"
+    st "$DOTFILES/kitty/tab_bar.py"          "$HOME/.config/kitty/tab_bar.py"
+    st "$DOTFILES/kitty/window_title_bar.py" "$HOME/.config/kitty/window_title_bar.py"
+    st "$DOTFILES/kitty/factory-theme.conf"  "$HOME/.config/kitty/factory-theme.conf"
+  else
+    skip "kitty (not installed)"
+  fi
+
+  if has zsh; then
+    st "$DOTFILES/shell/zshrc"    "$HOME/.zshrc"
+    st "$DOTFILES/shell/zshenv"   "$HOME/.zshenv"
+    st "$DOTFILES/shell/zprofile" "$HOME/.zprofile"
+  else
+    skip "zsh (not installed)"
+  fi
+  st "$DOTFILES/shell/bashrc" "$HOME/.bashrc"
+  if [ -f "$HOME/.aliases.local" ]; then
+    ok "~/.aliases.local (personal aliases preserved)"
+  else
+    info "~/.aliases.local (not found)"
+  fi
+
+  st "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"
+
+  if [ "$OS" = "Darwin" ] || has obsidian || [ -d "$VAULT/.obsidian" ]; then
+    local OBS="$VAULT/.obsidian" PLUG="$VAULT/.obsidian/plugins"
+    st "$DOTFILES/obsidian/factory-theme.css"       "$OBS/themes/Factory/theme.css"
+    st "$DOTFILES/obsidian/configs/appearance.json" "$OBS/appearance.json"
+    local p
+    for p in obsidian-hider calendar-beta obsidian-style-settings obsidian-kanban; do
+      if [ -f "$PLUG/$p/main.js" ]; then
+        ok "obsidian plugin: $p"
+      else
+        info "obsidian plugin: $p (would download)"
+      fi
+    done
+    if [ -f "$PLUG/factory-droids/main.js" ]; then
+      ok "obsidian plugin: factory-droids (built)"
+    elif has npm; then
+      info "obsidian plugin: factory-droids (would build)"
+    else
+      info "obsidian plugin: factory-droids (npm missing, build skipped)"
+    fi
+  else
+    skip "obsidian (not installed)"
+  fi
+}
+
+if [ "$CHECK" = 1 ]; then
+  run_check
+  printf "\n"
+  exit 0
+fi
+
+run_check
+if [ "$YES" = 0 ] && [ -t 0 ]; then
+  printf "\n  ${W}proceed with install? [Y/n] ${R}"
+  read -r ans
+  case "$ans" in
+    [nN]*) printf "  ${D}aborted${R}\n\n"; exit 0 ;;
+  esac
+fi
+
+# ── Fonts ───────────────────────────────────────────────────────────────
+header "Fonts"
 install_font "JetBrains Mono" "JetBrainsMono-Regular.ttf" \
   "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip" \
   "fonts/ttf/*.ttf"
