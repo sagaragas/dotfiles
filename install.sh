@@ -36,6 +36,9 @@ printf "  ${O}└$(printf '─%.0s' $(seq 1 $BOX_W))┘${R}\n"
 # ── Helpers ─────────────────────────────────────────────────────────────
 put() {
   mkdir -p "$(dirname "$2")"
+  if [ "$(readlink "$2" 2>/dev/null)" = "$1" ]; then
+    return 0  # already symlinked to source, nothing to do
+  fi
   cp -f "$1" "$2"
 }
 
