@@ -97,7 +97,6 @@ dotfiles/
 └── obsidian/
     ├── factory-theme.css
     ├── factory-callouts.css
-    ├── factory-droids-plugin/
     ├── configs/
     └── templates/
 ```

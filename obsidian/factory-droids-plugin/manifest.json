@@ -1,9 +1,0 @@
-{
-  "id": "factory-droids",
-  "name": "Factory Droids",
-  "version": "0.1.0",
-  "minAppVersion": "1.4.11",
-  "description": "Browse, search, and edit Factory AI droids, specs, missions, and sessions from inside Obsidian.",
-  "author": "ragas",
-  "isDesktopOnly": true
-}

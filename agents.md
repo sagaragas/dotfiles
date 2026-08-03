@@ -38,5 +38,4 @@ obsidian/*             → ~/notes/Work/.obsidian/  (override with ./install.sh 
 - Keep color values consistent across the terminal configs. If the terminal accent changes, update ghostty, kitty (including `tab_bar.py`), tmux, zshrc, and bashrc together.
 - Don't add dependencies that aren't already used. The shell configs have zero external dependencies beyond coreutils.
 - `install.sh` output uses Factory-colored formatting (orange headers, green checkmarks). Maintain the `header()`, `ok()`, `skip()`, `info()` functions.
-- The obsidian Factory Droids plugin lives in `obsidian/factory-droids-plugin/`. It's a TypeScript project built with esbuild. The installer copies source to the vault and runs `npm install && npm run build`.
 - Don't commit `.DS_Store`, `.entire/`, `.factory/`, or `.conductor/` (covered by `.gitignore`).

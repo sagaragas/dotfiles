@@ -201,13 +201,6 @@ run_check() {
         info "obsidian plugin: $p (would download)"
       fi
     done
-    if [ -f "$PLUG/factory-droids/main.js" ]; then
-      ok "obsidian plugin: factory-droids (built)"
-    elif has npm; then
-      info "obsidian plugin: factory-droids (would build)"
-    else
-      info "obsidian plugin: factory-droids (npm missing, build skipped)"
-    fi
   else
     skip "obsidian (not installed)"
   fi
@@ -301,20 +294,6 @@ if [ "$OS" = "Darwin" ] || has obsidian || [ -d "$VAULT/.obsidian" ]; then
   cp -f "$DOTFILES/obsidian/configs/style-settings.json" "$PLUG/obsidian-style-settings/data.json"
   download_plugin "mgmeyers/obsidian-kanban"             "$PLUG/obsidian-kanban"
   ok "hider, calendar, style-settings, kanban"
-
-  FD="$PLUG/factory-droids"
-  mkdir -p "$FD/src/views"
-  for f in package.json manifest.json tsconfig.json esbuild.config.mjs styles.css; do
-    cp -f "$DOTFILES/obsidian/factory-droids-plugin/$f" "$FD/"
-  done
-  cp "$DOTFILES"/obsidian/factory-droids-plugin/src/*.ts       "$FD/src/"
-  cp "$DOTFILES"/obsidian/factory-droids-plugin/src/views/*.ts "$FD/src/views/"
-  if has npm; then
-    (cd "$FD" && npm install --silent 2>/dev/null && npm run build 2>/dev/null)
-    ok "factory-droids plugin (built)"
-  else
-    info "factory-droids plugin (npm not found, build manually)"
-  fi
 
   mkdir -p "$VAULT"/{Daily,Templates,Projects,Areas,Resources,Archive,Clippings}
   [ ! -f "$VAULT/Templates/Daily Note.md" ] && \
