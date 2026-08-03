@@ -2,21 +2,21 @@ from kitty.boss import get_boss
 from kitty.fast_data_types import Screen, add_timer
 from kitty.tab_bar import DrawData, ExtraData, TabBarData, as_rgb, draw_title
 
-# Moonfly palette
+# Factory palette
 PALETTE = [
-    {"bg": "#74b2ff", "fg": "#080808"},  # blue
-    {"bg": "#8cc85f", "fg": "#080808"},  # green
-    {"bg": "#ae81ff", "fg": "#080808"},  # violet
-    {"bg": "#cf87e8", "fg": "#080808"},  # magenta
-    {"bg": "#ff5454", "fg": "#080808"},  # red
-    {"bg": "#79dac8", "fg": "#080808"},  # cyan
-    {"bg": "#e3c78a", "fg": "#080808"},  # yellow
-    {"bg": "#ff5189", "fg": "#080808"},  # crimson
-    {"bg": "#36c692", "fg": "#080808"},  # turquoise
+    {"bg": "#ef6f2e", "fg": "#020202"},  # orange
+    {"bg": "#ffb86c", "fg": "#020202"},  # light orange
+    {"bg": "#34d399", "fg": "#020202"},  # green
+    {"bg": "#60a5fa", "fg": "#020202"},  # blue
+    {"bg": "#c084fc", "fg": "#020202"},  # magenta
+    {"bg": "#22d3ee", "fg": "#020202"},  # cyan
+    {"bg": "#f87171", "fg": "#020202"},  # red
+    {"bg": "#6ee7b7", "fg": "#020202"},  # mint
+    {"bg": "#93c5fd", "fg": "#020202"},  # light blue
 ]
 
 DIM_FACTOR = 0.4
-INACTIVE_FG = (189, 189, 189)
+INACTIVE_FG = (138, 131, 128)
 
 def _hex_to_rgb(h):
     h = h.lstrip("#")

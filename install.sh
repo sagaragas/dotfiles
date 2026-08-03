@@ -159,7 +159,7 @@ run_check() {
 
   if [ "$OS" = "Darwin" ] || has ghostty; then
     st "$DOTFILES/ghostty/config"  "$HOME/.config/ghostty/config"
-    st "$DOTFILES/ghostty/moonfly" "$HOME/.config/ghostty/themes/moonfly"
+    st "$DOTFILES/ghostty/factory" "$HOME/.config/ghostty/themes/factory"
   else
     skip "ghostty (not installed)"
   fi
@@ -232,8 +232,8 @@ header "Ghostty"
 if [ "$OS" = "Darwin" ] || has ghostty; then
   put "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
   mkdir -p "$HOME/.config/ghostty/themes"
-  cp -f "$DOTFILES/ghostty/moonfly" "$HOME/.config/ghostty/themes/moonfly"
-  ok "config + moonfly theme"
+  cp -f "$DOTFILES/ghostty/factory" "$HOME/.config/ghostty/themes/factory"
+  ok "config + factory theme"
 else
   skip "not installed"
 fi

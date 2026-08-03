@@ -6,10 +6,10 @@ Factory AI-themed configs for macOS and Linux.
 
 | Component | Config | Notes |
 |-----------|--------|-------|
-| **Ghostty** | `ghostty/` | Moonfly color theme |
+| **Ghostty** | `ghostty/` | Factory color theme |
 | **Kitty** | `kitty/` | Factory theme + custom Python tab bar |
-| **Tmux** | `tmux/` | Moonfly status bar and pane borders |
-| **Zsh** | `shell/zshrc` | Moonfly prompt, ls/grep/man/diff colors |
+| **Tmux** | `tmux/` | Factory status bar and pane borders |
+| **Zsh** | `shell/zshrc` | Factory prompt, ls/grep/man/diff colors |
 | **Bash** | `shell/bashrc` | Same as zsh, for headless Linux boxes |
 | **Obsidian** | `obsidian/` | Factory theme (dark+light), callouts, plugins |
 | **Fonts** | auto-downloaded | JetBrains Mono |
@@ -48,32 +48,30 @@ The script detects the OS and skips GUI apps (ghostty, kitty, obsidian) on headl
 
 ## Color palette
 
-Terminal configs (ghostty, kitty, tmux, zsh, bash) share the Moonfly palette:
+Everything (terminals, tmux, shell, obsidian) shares the Factory AI palette:
 
 | Role | Hex |
 |------|-----|
-| Accent (blue) | `#74b2ff` |
-| Background | `#080808` |
-| Surface / border | `#323437` |
-| Text | `#bdbdbd` |
-| Muted | `#949494` |
-| Cursor | `#9e9e9e` |
-| Selection | `#b2ceee` |
+| Accent (orange) | `#ef6f2e` |
+| Background | `#020202` |
+| Surface / border | `#1f1d1c` |
+| Text | `#d6d3d2` |
+| Muted | `#8a8380` |
+| Cursor | `#ef6f2e` |
+| Selection | `#ef6f2e` |
 
 ANSI slots:
 
 | Slot | Normal | Bright |
 |------|--------|--------|
-| black | `#323437` | `#949494` |
-| red | `#ff5454` | `#ff5189` |
-| green | `#8cc85f` | `#36c692` |
-| yellow | `#e3c78a` | `#c6c684` |
-| blue | `#80a0ff` | `#74b2ff` |
-| magenta | `#cf87e8` | `#ae81ff` |
-| cyan | `#79dac8` | `#85dc85` |
-| white | `#c6c6c6` | `#e4e4e4` |
-
-The Obsidian theme is independent and keeps the Factory AI palette (`#ef6f2e` accent on `#020202`).
+| black | `#1f1d1c` | `#5c5855` |
+| red | `#f87171` | `#fca5a5` |
+| green | `#34d399` | `#6ee7b7` |
+| yellow | `#ef6f2e` | `#ffb86c` |
+| blue | `#60a5fa` | `#93c5fd` |
+| magenta | `#c084fc` | `#d8b4fe` |
+| cyan | `#22d3ee` | `#67e8f9` |
+| white | `#d6d3d2` | `#eae7e6` |
 
 ## Structure
 
@@ -82,11 +80,12 @@ dotfiles/
 ├── install.sh           # OS-aware installer
 ├── ghostty/
 │   ├── config
-│   └── moonfly          # color theme
+│   └── factory          # color theme
 ├── kitty/
 │   ├── kitty.conf
-│   ├── moonfly.conf     # color theme
-│   └── tab_bar.py
+│   ├── factory-theme.conf  # color theme
+│   ├── tab_bar.py
+│   └── window_title_bar.py
 ├── shell/
 │   ├── zshrc
 │   ├── zshenv
