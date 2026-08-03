@@ -21,8 +21,9 @@ This is a dotfiles repo. Configs are stored here and copied to their destination
 ghostty/config         → ~/.config/ghostty/config
 ghostty/moonfly        → ~/.config/ghostty/themes/moonfly
 kitty/kitty.conf       → ~/.config/kitty/kitty.conf
-kitty/moonfly.conf     → ~/.config/kitty/moonfly.conf
+kitty/factory-theme.conf → ~/.config/kitty/factory-theme.conf
 kitty/tab_bar.py       → ~/.config/kitty/tab_bar.py
+kitty/window_title_bar.py → ~/.config/kitty/window_title_bar.py
 shell/zshrc            → ~/.zshrc
 shell/zshenv           → ~/.zshenv
 shell/zprofile         → ~/.zprofile

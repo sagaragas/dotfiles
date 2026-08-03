@@ -81,10 +81,11 @@ fi
 # ── Kitty ───────────────────────────────────────────────────────────────
 header "Kitty"
 if [ "$OS" = "Darwin" ] || has kitty; then
-  put "$DOTFILES/kitty/kitty.conf"   "$HOME/.config/kitty/kitty.conf"
-  put "$DOTFILES/kitty/tab_bar.py"   "$HOME/.config/kitty/tab_bar.py"
-  put "$DOTFILES/kitty/moonfly.conf" "$HOME/.config/kitty/moonfly.conf"
-  ok "config + moonfly theme + tab bar"
+  put "$DOTFILES/kitty/kitty.conf"         "$HOME/.config/kitty/kitty.conf"
+  put "$DOTFILES/kitty/tab_bar.py"         "$HOME/.config/kitty/tab_bar.py"
+  put "$DOTFILES/kitty/window_title_bar.py" "$HOME/.config/kitty/window_title_bar.py"
+  put "$DOTFILES/kitty/factory-theme.conf" "$HOME/.config/kitty/factory-theme.conf"
+  ok "config + factory theme + tab bar + window title bar"
 else
   skip "not installed"
 fi
