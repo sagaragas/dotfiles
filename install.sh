@@ -53,19 +53,50 @@ download_plugin() {
 header "Fonts"
 [ "$OS" = "Darwin" ] && FONT_DIR="$HOME/Library/Fonts" || FONT_DIR="$HOME/.local/share/fonts"
 
-if [ ! -f "$FONT_DIR/GeistMono-Regular.otf" ]; then
-  TMPD=$(mktemp -d)
-  curl -sL "https://github.com/vercel/geist-font/releases/download/1.8.0/geist-font-1.8.0.zip" -o "$TMPD/geist.zip"
-  unzip -qo "$TMPD/geist.zip" -d "$TMPD/geist"
-  mkdir -p "$FONT_DIR"
-  cp "$TMPD"/geist/geist-font-*/fonts/Geist/otf/*.otf     "$FONT_DIR/"
-  cp "$TMPD"/geist/geist-font-*/fonts/GeistMono/otf/*.otf "$FONT_DIR/"
-  rm -rf "$TMPD"
-  [ "$OS" = "Linux" ] && has fc-cache && fc-cache -f "$FONT_DIR"
-  ok "Geist + Geist Mono"
-else
-  ok "Geist fonts already installed"
-fi
+font_installed() {
+  [ -f "$FONT_DIR/$1" ] && return 0
+  if [ "$OS" = "Darwin" ]; then
+    [ -f "/Library/Fonts/$1" ] || [ -f "/System/Library/Fonts/$1" ]
+  else
+    [ -f "/usr/share/fonts/$1" ] || [ -f "/usr/local/share/fonts/$1" ]
+  fi
+}
+
+# install_font <name> <check-file> <zip-url> <glob-within-zip>
+install_font() {
+  local name="$1" check="$2" url="$3" glob="$4"
+  if font_installed "$check"; then
+    ok "$name already installed"
+    return 0
+  fi
+  if ! has curl || ! has unzip; then
+    info "$name: needs curl + unzip, install manually"
+    return 0
+  fi
+  local tmpd; tmpd=$(mktemp -d)
+  if curl -sL "$url" -o "$tmpd/font.zip" &&
+     unzip -qo "$tmpd/font.zip" -d "$tmpd/x" &&
+     mkdir -p "$FONT_DIR" &&
+     cp "$tmpd"/x/$glob "$FONT_DIR/" 2>/dev/null; then
+    if [ "$OS" = "Linux" ] && has fc-cache; then fc-cache -f "$FONT_DIR"; fi
+    if font_installed "$check"; then
+      ok "$name"
+    else
+      info "$name: installed but $check not found, check $FONT_DIR"
+    fi
+  else
+    info "$name: download failed, install manually"
+  fi
+  rm -rf "$tmpd"
+}
+
+install_font "Geist + Geist Mono" "GeistMono-Regular.otf" \
+  "https://github.com/vercel/geist-font/releases/download/1.8.0/geist-font-1.8.0.zip" \
+  "geist-font-*/fonts/*/otf/*.otf"
+
+install_font "JetBrains Mono" "JetBrainsMono-Regular.ttf" \
+  "https://github.com/JetBrains/JetBrainsMono/releases/download/v2.304/JetBrainsMono-2.304.zip" \
+  "fonts/ttf/*.ttf"
 
 # ── Ghostty ─────────────────────────────────────────────────────────────
 header "Ghostty"
