@@ -117,8 +117,39 @@ st() {
   fi
 }
 
+# report repo freshness; in normal mode pull when safe (on main, clean, ff-only)
+repo_sync() {
+  has git && [ -d "$DOTFILES/.git" ] || return 0
+  if ! git -C "$DOTFILES" fetch --quiet origin 2>/dev/null; then
+    info "repo: could not reach origin (offline?)"
+    return 0
+  fi
+  local behind
+  behind=$(git -C "$DOTFILES" rev-list --count HEAD..origin/main 2>/dev/null || echo 0)
+  if ! [ "$behind" -gt 0 ] 2>/dev/null; then
+    ok "repo: up to date"
+    return 0
+  fi
+  if [ "$(git -C "$DOTFILES" branch --show-current)" != "main" ]; then
+    info "repo: $behind commit(s) behind origin/main (not on main, skipping pull)"
+    return 0
+  fi
+  if ! git -C "$DOTFILES" diff --quiet || ! git -C "$DOTFILES" diff --cached --quiet; then
+    info "repo: $behind commit(s) behind origin/main (local changes, skipping pull)"
+    return 0
+  fi
+  if [ "$CHECK" = 1 ]; then
+    info "repo: $behind commit(s) behind origin/main (would pull)"
+  elif git -C "$DOTFILES" pull --ff-only --quiet origin main; then
+    ok "repo: pulled $behind commit(s) from origin/main"
+  else
+    info "repo: history diverged from origin/main, pull manually"
+  fi
+}
+
 run_check() {
   header "Check"
+  repo_sync
 
   if font_installed "JetBrainsMono-Regular.ttf"; then
     ok "JetBrains Mono"
